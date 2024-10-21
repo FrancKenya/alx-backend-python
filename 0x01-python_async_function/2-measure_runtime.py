@@ -6,7 +6,7 @@ import time
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-async def measure_time(n: int, max_delay: int) -> float:
+def measure_time(n: int, max_delay: int) -> float:
     """ Measures the total runtime of wait_n
     Args:
         n (int): number of times to call wait_n
@@ -20,4 +20,4 @@ async def measure_time(n: int, max_delay: int) -> float:
     # Record the end time
     end = time.perf_counter()
     elapsed_time = end - start
-    return elapsed_time/n
+    return elapsed_time / n

@@ -42,7 +42,7 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertRaises(KeyError, access_nested_map, nest, path)
 
 
-class TestGetJson(TestCase):
+class TestGetJson(unittest.TestCase):
     """
     Test class for get_json function
     """
@@ -60,7 +60,7 @@ class TestGetJson(TestCase):
         mock_requests_get.assert_called_once_with(url)
 
 
-class TestMemoize(TestCase):
+class TestMemoize(unittest.TestCase):
     """
     Test the memoization decorator, memoize
     """

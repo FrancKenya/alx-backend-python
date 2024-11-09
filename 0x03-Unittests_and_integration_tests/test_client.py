@@ -42,9 +42,8 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         payload = [{"name": "hello"}, {"name": "world"}]
         mock_get_json.return_value = payload
-        with patch(
-            'client.GithubOrgClient._public_repos_url',
-            new_callable=PropertyMock)as public_mock:
+        with patch('client.GithubOrgClient._public_repos_url',
+                   new_callable=PropertyMock) as public_mock:
             public_mock.return_value = "hello"
             client = GithubOrgClient("google")
             result = client.public_repos()

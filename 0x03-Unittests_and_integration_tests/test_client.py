@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """A github org client unittest
 """
-import unittest
+
 from client import GithubOrgClient
 from parameterized import parameterized
 from unittest.mock import patch
+import unittest
 
 
 class TestGithubOrgClient(unittest.TestCase):
     """Test GithubOrgClient"""
     @parameterized.expand([
-        'google',
-        'abc'
+        ('google'),
+        ('abc')
     ])
     @patch('client.get_json')
     def test_org(self, mock_get_json, org_name):

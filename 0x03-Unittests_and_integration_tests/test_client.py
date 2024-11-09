@@ -4,8 +4,8 @@
 
 from client import GithubOrgClient
 from parameterized import parameterized
-from unittest.mock import patch
 import unittest
+from unittest.mock import patch
 
 
 class TestGithubOrgClient(unittest.TestCase):

@@ -57,7 +57,7 @@ class TestGithubOrgClient(unittest.TestCase):
         ({"license": {"key": "other_license"}}, "my_license", False)
     ])
     def test_has_license(self, repo, license_key, expected):
-        """ unit-test for GithubOrgClient.has_license """
+        """ Tests GithubOrgClient.has_license """
         result = GithubOrgClient.has_license(repo, license_key)
         self.assertEqual(result, expected)
 
@@ -66,10 +66,10 @@ class TestGithubOrgClient(unittest.TestCase):
     ("org_payload", "repos_payload", "expected_repos", "apache2_repos"),
     TEST_PAYLOAD)
 class TestIntegrationGithubOrgClient(unittest.TestCase):
-    """ Class - Integration test of fixtures """
+    """ Test Integration GithubOrgClient """
     @classmethod
     def setUpClass(cls):
-        """method called before tests in an individual class are run"""
+        """method called to prepare the class for tests"""
         config = {'return_value.json.side_effect':
                   [
                       cls.org_payload, cls.repos_payload,
@@ -80,7 +80,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         cls.mock = cls.get_patcher.start()
 
     def test_public_repos(self):
-        """ Integration test: public repos"""
+        """ Integration test for public repos without License """
         test_class = GithubOrgClient("google")
 
         self.assertEqual(test_class.org, self.org_payload)

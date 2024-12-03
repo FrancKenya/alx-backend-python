@@ -2,19 +2,19 @@
 """
 This module provides a type-annotated function element_length.
 """
-from typing import List, Tuple
+from typing import Iterable, Sequence, List, Tuple
 
 
-def element_length(lst: List[str]) -> List[Tuple[str, int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """
-    Takes a list of strings and returns a list of tuples
-      with each string and its length.
+    Takes an iterable of sequences and returns a list
+    of tuples with each sequence and its length.
 
     Args:
-        lst (List[str]): A list of strings.
+        lst (Iterable[Sequence]): An iterable of sequences.
 
     Returns:
-        List[Tuple[str, int]]: A list of tuples,
-        where each tuple contains a string and its length.
+        List[Tuple[Sequence, int]]: A list of tuples,
+        where each tuple contains a sequence and its length.
     """
     return [(i, len(i)) for i in lst]

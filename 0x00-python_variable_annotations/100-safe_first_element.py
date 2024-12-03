@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" """
+"""This module provides a duck-typed annotated function."""
 from typing import Sequence, Any, Union
 
 
